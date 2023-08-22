@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  max-width: 1440px;
+}
+body {
+  height: 100vh;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  .stickyWrapper {
+    position: sticky;
+    top: 0;
+    .firstLine {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+      .macPawLogo {
+        width: 104px;
+        height: 24px;
+      }
+      .themeSwitcher {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        .logo {
+          width: 24px;
+          height: 24px;
+        }
+        input[type='checkbox'] {
+          height: 0;
+          width: 0;
+          visibility: hidden;
+        }
+        label {
+          cursor: pointer;
+          text-indent: -9999px;
+          width: 44px;
+          height: 24px;
+          background: #fbe0dc;
+          display: block;
+          border-radius: 100px;
+          position: relative;
+        }
+        label:after {
+          content: '';
+          position: absolute;
+          top: 4px;
+          left: 4px;
+          width: 16px;
+          height: 16px;
+          background: #ff868e;
+          border-radius: 30px;
+          transition: 0.3s;
+        }
+        input:checked + label {
+          background: #fbe0dc;
+        }
+        input:checked + label:after {
+          left: calc(100% - 5px);
+          transform: translateX(-100%);
+        }
+        label:active:after {
+          width: 20px;
+        }
+      }
+    }
+    .secondLine {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: flex-start;
+      .greetings {
+        color: #1d1d1d;
+        // font-family: Jost;
+        font-size: 44px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 58px; /* 131.818% */
+      }
+      .welcome {
+        color: #8c8c8c;
+        // font-family: Jost;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+    }
+    .thirdLine {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: flex-start;
+      .navTitle {
+        color: #1d1d1d;
+        // font-family: Jost;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+      }
+      .navigation {
+        display: flex;
+      }
+    }
+  }
+  .outlet {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+}

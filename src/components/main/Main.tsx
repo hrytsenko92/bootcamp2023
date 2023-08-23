@@ -4,6 +4,9 @@ import style from './main.module.scss';
 import logo from '../../assets/Logo.svg';
 import daySVG from '../../assets/day.svg';
 import nightSVG from '../../assets/night.svg';
+import votingSVG from '../../assets/votingSVG.svg';
+import breedsSVG from '../../assets/breedsSVG.svg';
+import gallerySVG from '../../assets/gallerySVG.svg';
 
 export const Main: React.FC = () => {
     const [theme, setTheme] = useState<boolean>(true)
@@ -14,7 +17,9 @@ export const Main: React.FC = () => {
       <div className={style.container}>
         <section className={style.stickyWrapper}>
           <div className={style.firstLine}>
-            <img src={logo} alt="Logotype" className={style.macPawLogo} />
+            <Link className={style.link} to={'/'}>
+              <img src={logo} alt="Logotype" className={style.macPawLogo} />
+            </Link>
             <div className={style.themeSwitcher}>
               {theme ? (
                 <img className={style.logo} src={daySVG} alt="daySVG" />
@@ -40,26 +45,47 @@ export const Main: React.FC = () => {
             <span className={style.navTitle}>Lets start using The Cat API</span>
             <nav className={style.navigation}>
               <div className={style.linkWrapper}>
-                <img src="" alt="" />
+                <img
+                  className={style.linkSVG}
+                  src={votingSVG}
+                  alt="votingsvg"
+                />
+                <Link
+                  className={style.link}
+                  to={'/voting'}
+                  state={{ from: 'occupationVoting' }}
+                >
+                  Voting
+                </Link>
               </div>
-              <Link
-                // className={style.link}
-                to={'/voting'}
-              >
-                Voting
-              </Link>
-              <Link
-                // className={style.link}
-                to={'/breeds'}
-              >
-                Breeds
-              </Link>
-              <Link
-                // className={style.link}
-                to={'/gallery'}
-              >
-                Gallery
-              </Link>
+              <div className={style.linkWrapper}>
+                <img
+                  className={style.linkSVG}
+                  src={breedsSVG}
+                  alt="breedssvg"
+                />
+                <Link
+                  className={style.link}
+                  to={'/breeds'}
+                  state={{ from: 'occupationBreeds' }}
+                >
+                  Breeds
+                </Link>
+              </div>
+              <div className={style.linkWrapper}>
+                <img
+                  className={style.linkSVG}
+                  src={gallerySVG}
+                  alt="gallerysvg"
+                />
+                <Link
+                  className={style.link}
+                  to={'/gallery'}
+                  state={{ from: 'occupationGallery' }}
+                >
+                  Gallery
+                </Link>
+              </div>
             </nav>
           </div>
         </section>

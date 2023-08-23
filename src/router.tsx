@@ -1,9 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { Main } from './components/main/Main';
-import { Voting } from './components/voting/Voting';
-import { Breeds } from './components/breeds/Breeds';
-import { Gallery } from './components/gallery/Gallery';
 import { Cover } from './components/cover/Cover';
+import { Modal } from './components/modal/Modal';
 import { ErrorPage } from './components/errorPage/ErrorPage';
 
 export const router = createBrowserRouter([
@@ -18,15 +16,31 @@ export const router = createBrowserRouter([
       },
       {
         path: 'voting',
-        element: <Voting />,
+        element: <Modal />,
       },
       {
         path: 'breeds',
-        element: <Breeds />,
+        element: <Modal />,
       },
       {
         path: 'gallery',
-        element: <Gallery />,
+        element: <Modal />,
+      },
+      {
+        path: 'search',
+        element: <Modal />,
+      },
+      {
+        path: 'likes',
+        element: <Modal />,
+      },
+      {
+        path: 'dislikes',
+        element: <Modal />,
+      },
+      {
+        path: 'favourites',
+        element: <Modal />,
       },
     ],
   },

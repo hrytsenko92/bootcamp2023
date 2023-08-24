@@ -53,7 +53,7 @@ export const Main: React.FC = () => {
                 <Link
                   className={style.link}
                   to={'/voting'}
-                  state={{ from: 'occupationVoting' }}
+                  state={{ from: 'voting' }}
                 >
                   Voting
                 </Link>
@@ -67,7 +67,7 @@ export const Main: React.FC = () => {
                 <Link
                   className={style.link}
                   to={'/breeds'}
-                  state={{ from: 'occupationBreeds' }}
+                  state={{ from: 'breeds' }}
                 >
                   Breeds
                 </Link>
@@ -81,7 +81,7 @@ export const Main: React.FC = () => {
                 <Link
                   className={style.link}
                   to={'/gallery'}
-                  state={{ from: 'occupationGallery' }}
+                  state={{ from: 'gallery' }}
                 >
                   Gallery
                 </Link>

@@ -1,6 +1,6 @@
 import { FC } from "react";
 import style from './cover.module.scss';
-import girlPet from '../../assets/girlPet.png';
+import girlPet from '../../../assets/girlPet.png';
 
 export const Cover: FC = () => {
     return (

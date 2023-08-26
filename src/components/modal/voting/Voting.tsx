@@ -79,7 +79,7 @@ export const Voting: FC = () => {
     logSliceData.length > 0 ? updateLogStack() : null;
     const dataLoader = async () => {
       setLoading(true);
-      const data: VotingType[] = await getData(`images/search`);
+      const data: VotingType[] = await getData(`images/search`, 1);
       setCatData(data[0]);
       setLoading(false);
     };

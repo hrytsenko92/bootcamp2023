@@ -9,6 +9,7 @@ import { Dislikes } from './dislikes/Dislikes';
 import { Favourites } from './favourites/Favourites';
 import { Search } from './search/Search';
 import { NavBar } from './navBar/NavBar';
+import { BreedID } from './breeds/breedID/BreedID';
 
 export const Modal: React.FC = () => {
   const location = useLocation();
@@ -20,7 +21,7 @@ export const Modal: React.FC = () => {
   },[from])
   return (
     <div className={styles.container}>
-    <NavBar/>
+      <NavBar />
       {url === 'voting' ? (
         <Voting />
       ) : from === 'breeds' ? (
@@ -35,9 +36,9 @@ export const Modal: React.FC = () => {
         <Dislikes />
       ) : from === 'favourites' ? (
         <Favourites />
-      ) : (
-        null
-      )}
+      ) : from === 'breedID' ? (
+        <BreedID />
+      ) : null}
     </div>
   );
 };

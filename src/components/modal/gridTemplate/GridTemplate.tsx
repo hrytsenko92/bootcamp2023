@@ -7,7 +7,6 @@ type propType = {
   gridItem?: BreedType[];
 };
 export const GridTemplate: FC<propType> = ({ gridItem }) => {
-  console.log(gridItem)
   return (
     <>
       {Array.isArray(gridItem) ? (

@@ -12,6 +12,7 @@ export const postData = async (
         'x-api-key': import.meta.env.VITE_APIKEY,
       },
     });
+    console.log(response)
     return response.data;
     
   } catch (err) {
@@ -22,6 +23,7 @@ export const postData = async (
     console.log(`Axios error: ${err}`);
   }
 };
+
 
 export const getData = async (url: string, params: object) => {
   try {

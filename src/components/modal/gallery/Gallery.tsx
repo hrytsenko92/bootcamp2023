@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import style from './gallery.module.scss';
 import { order, imgFormat, GalleryIMGType } from './galleryTypes';
 import { allBreeds, limit } from '../breeds/breedType';
-import { getData2, postData } from '../../../dataLoaders';
+import { getData, postData } from '../../../dataLoaders';
 import { useAppDispatch } from '../../../../store/hook';
 import { add } from '../../../../store/logSlice';
 
@@ -68,7 +68,7 @@ export const Gallery: FC = () => {
     const mimeTypes = selectedFormat !== 'all' ? selectedFormat : '';
     const breedIds = selectedBreed !== 'all' ? selectedBreed : '';
     const limit = selectedLimit;
-    const res: GalleryIMGType[] = await getData2(`images/search`, {
+    const res: GalleryIMGType[] = await getData(`images/search`, {
       order,
       mime_types: mimeTypes,
       breed_ids: breedIds,

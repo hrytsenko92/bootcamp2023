@@ -132,13 +132,28 @@
         width: 60px;
         height: 30px;
         border-radius: 5px;
-        background-color: #FFFFFF;
+        background-color: #ffffff;
         color: #1d1d1d;
         font-size: 16px;
         font-style: normal;
         font-weight: 400;
         line-height: 24px;
       }
+    }
+  }
+  .noItem {
+    border-radius: 10px;
+    background-color: #F8F8F7;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    span {
+      color: #8c8c8c;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px;
     }
   }
 }

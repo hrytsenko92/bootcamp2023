@@ -19,7 +19,7 @@ export const BreedID: FC = () => {
     if (item) {
       const res: VotingType[] = await getData(
         `images/search?breed_ids=${item.id}`,
-        {limit: 5},
+        { limit: 5 },
       );
       setDataIMG(res);
     }
@@ -43,50 +43,50 @@ export const BreedID: FC = () => {
         </p>
       </div>
       {dataIMG ? (
-          <Swiper
-            spaceBetween={30}
-            pagination={{
-              clickable: true,
-            }}
-            modules={[Pagination]}
-            className={style.mySwiper}
-          >
-            <SwiperSlide>
-              <img
-                className={style.swiperIMG}
-                src={dataIMG[0].url}
-                alt="catImg"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                className={style.swiperIMG}
-                src={dataIMG[1].url}
-                alt="catImg"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                className={style.swiperIMG}
-                src={dataIMG[2].url}
-                alt="catImg"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                className={style.swiperIMG}
-                src={dataIMG[3].url}
-                alt="catImg"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                className={style.swiperIMG}
-                src={dataIMG[4].url}
-                alt="catImg"
-              />
-            </SwiperSlide>
-          </Swiper>
+        <Swiper
+          spaceBetween={30}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Pagination]}
+          className={style.mySwiper}
+        >
+          <SwiperSlide>
+            <img
+              className={style.swiperIMG}
+              src={dataIMG[0].url}
+              alt="catImg"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img
+              className={style.swiperIMG}
+              src={dataIMG[1].url}
+              alt="catImg"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img
+              className={style.swiperIMG}
+              src={dataIMG[2].url}
+              alt="catImg"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img
+              className={style.swiperIMG}
+              src={dataIMG[3].url}
+              alt="catImg"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img
+              className={style.swiperIMG}
+              src={dataIMG[4].url}
+              alt="catImg"
+            />
+          </SwiperSlide>
+        </Swiper>
       ) : null}
 
       <div className={style.infoWrapper}>

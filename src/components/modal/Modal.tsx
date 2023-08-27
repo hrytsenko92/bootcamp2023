@@ -4,9 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { Breeds } from './breeds/Breeds';
 import { Voting } from './voting/Voting';
 import { Gallery } from './gallery/Gallery';
-import { Likes } from './navBar/likes/Likes';
-import { Dislikes } from './navBar/dislikes/Dislikes';
-import { Favourites } from './navBar/favourites/Favourites';
+import { NavModal } from './navBar/navModal/NavModal';
 import { Search } from './navBar/search/Search';
 import { NavBar } from './navBar/NavBar';
 import { BreedID } from './breeds/breedID/BreedID';
@@ -32,14 +30,16 @@ export const Modal: React.FC = () => {
       ) : from === 'search' ? (
         <Search />
       ) : from === 'likes' ? (
-        <Likes />
+        <NavModal />
       ) : from === 'dislikes' ? (
-        <Dislikes />
+        <NavModal />
       ) : from === 'favourites' ? (
-        <Favourites />
+        <NavModal />
       ) : from === 'breedID' ? (
         <BreedID />
-      ) : <Loader />}
+      ) : (
+        <Loader />
+      )}
     </div>
   );
 };

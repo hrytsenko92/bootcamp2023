@@ -25,7 +25,7 @@ export const Voting: FC = () => {
       const res = await postData('votes', {
         image_id: catData.id,
         value: 1,
-        sub_id: import.meta.env.MySubID,
+        sub_id: import.meta.env.VITE_MySubID,
       });
 
       if (res.message === 'SUCCESS') {
@@ -38,7 +38,7 @@ export const Voting: FC = () => {
       const res = await postData('votes', {
         image_id: catData.id,
         value: 0,
-        sub_id: import.meta.env.MySubID,
+        sub_id: import.meta.env.VITE_MySubID,
       });
       if (res.message === 'SUCCESS') {
         updateLogSlice('Dislikes', 'added');
@@ -49,7 +49,7 @@ export const Voting: FC = () => {
     if (catData?.id) {
       const res = await postData('favourites', {
         image_id: catData.id,
-        sub_id: import.meta.env.MySubID,
+        sub_id: import.meta.env.VITE_MySubID,
       });
       if (res.message === 'SUCCESS') {
         updateLogSlice('Favourites', 'added');
@@ -123,21 +123,31 @@ export const Voting: FC = () => {
             {logStack.map(item => (
               <li key={item.image_id} className={style.logStackItem}>
                 <p className={style.logTime}>{formatTime(item.time)}</p>
-                <p className={style.logMessage}>{`Image ID: ${item.image_id} was ${item.changes} to ${item.category}`}</p>
+                <p
+                  className={style.logMessage}
+                >{`Image ID: ${item.image_id} was ${item.changes} to ${item.category}`}</p>
                 {item.category === 'Likes' ? (
                   <img className={style.logSVG} src={likeD} alt="like" />
                 ) : item.category === 'Dislikes' ? (
                   <img className={style.logSVG} src={DislikeD} alt="dislike" />
                 ) : item.category === 'Favourites' ? (
-                  <img className={style.logSVG} src={FavouritesD} alt="favourites" />
+                  <img
+                    className={style.logSVG}
+                    src={FavouritesD}
+                    alt="favourites"
+                  />
                 ) : (
-                  <Loader />
+                  <div className={style.noItem}>
+                    <span>No item found</span>
+                  </div>
                 )}
               </li>
             ))}
           </ul>
         ) : (
-          <Loader />
+          <div className={style.noItem}>
+            <span>No item found</span>
+          </div>
         )}
       </section>
     );

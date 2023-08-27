@@ -5,7 +5,7 @@
   max-width: 1440px;
   &::-webkit-scrollbar {
     display: none;
-}
+  }
 }
 body {
   background-color: #f8f8f7;
@@ -94,15 +94,13 @@ body {
       align-items: flex-start;
       .greetings {
         color: #1d1d1d;
-        // font-family: Jost;
         font-size: 44px;
         font-style: normal;
         font-weight: 500;
-        line-height: 58px; /* 131.818% */
+        line-height: 58px;
       }
       .welcome {
         color: #8c8c8c;
-        // font-family: Jost;
         font-size: 20px;
         font-style: normal;
         font-weight: 400;
@@ -119,7 +117,6 @@ body {
       gap: 20px;
       .navTitle {
         color: #1d1d1d;
-        // font-family: Jost;
         font-size: 20px;
         font-style: normal;
         font-weight: 500;
@@ -154,14 +151,14 @@ body {
             font-size: 12px;
             font-style: normal;
             font-weight: 500;
-            line-height: 16px; /* 133.333% */
+            line-height: 16px;
             letter-spacing: 2px;
             text-decoration: none;
             &:hover {
-              background-color: #FBE0DC;
+              background-color: #fbe0dc;
             }
             &:active {
-              background-color: #FF868E;
+              background-color: #ff868e;
               color: white;
             }
           }

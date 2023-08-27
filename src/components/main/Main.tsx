@@ -1,18 +1,18 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import style from './main.module.scss';
 import logo from '../../assets/Logo.svg';
-import daySVG from '../../assets/day.svg';
-import nightSVG from '../../assets/night.svg';
+// import daySVG from '../../assets/day.svg';
+// import nightSVG from '../../assets/night.svg';
 import votingSVG from '../../assets/votingSVG.svg';
 import breedsSVG from '../../assets/breedsSVG.svg';
 import gallerySVG from '../../assets/gallerySVG.svg';
 
 export const Main: React.FC = () => {
-    const [theme, setTheme] = useState<boolean>(true)
-    const handleChange = () => {
-      setTheme(!theme);
-    };
+    // const [theme, setTheme] = useState<boolean>(true)
+    // const handleChange = () => {
+    //   setTheme(!theme);
+    // };
     return (
       <div className={style.container}>
         <section className={style.stickyWrapper}>
@@ -20,7 +20,7 @@ export const Main: React.FC = () => {
             <Link className={style.link} to={'/'}>
               <img src={logo} alt="Logotype" className={style.macPawLogo} />
             </Link>
-            <div className={style.themeSwitcher}>
+            {/* <div className={style.themeSwitcher}>
               {theme ? (
                 <img className={style.logo} src={daySVG} alt="daySVG" />
               ) : (
@@ -33,7 +33,7 @@ export const Main: React.FC = () => {
                 id="switch"
               />
               <label htmlFor="switch">Toggle</label>
-            </div>
+            </div> */}
           </div>
           <div className={style.secondLine}>
             <span className={style.greetings}>Hi!👋</span>

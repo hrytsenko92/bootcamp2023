@@ -6,8 +6,13 @@ import { allBreeds, limit } from '../breeds/breedType';
 import { getData, postData } from '../../../dataLoaders';
 import { useAppDispatch } from '../../../../store/hook';
 import { add } from '../../../../store/logSlice';
+// import { Portal } from './portal/Portal';
 
 export const Gallery: FC = () => {
+  // const [modalOpen, setModalOpen] = useState<boolean>(false);
+  // const openModal = () => setModalOpen(true);
+  // const closeModal = () => setModalOpen(false);
+
   const [data, setData] = useState<GalleryIMGType[]>();
   const [selectedOrder, setSelectedOrder] = useState<string>('RANDOM');
   const [selectedFormat, setSelectedFormat] = useState<string>('all');
@@ -93,6 +98,9 @@ export const Gallery: FC = () => {
           </p>
         </span>
         <button className={style.uploadIMG}></button>
+        {/* <Portal isOpen={modalOpen} onClose={closeModal}>
+          <h2> Modal</h2>
+        </Portal> */}
       </div>
       <div className={style.optionWrapper}>
         <div className={style.selectOrderWrapper}>

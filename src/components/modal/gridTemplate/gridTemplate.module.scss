@@ -1,10 +1,7 @@
 .gridContainer {
-  --block-s-w: 200px;
-  --block-s-h: 140px;
-  --block-m-w: 200px;
-  --block-m-h: 300px;
-  --block-l-w: 420px;
-  --block-l-h: 300px;
+  --sm: 2/3
+  --m: 2/3
+  --l:2/3
   width: 100%;
   height: 100%;
   display: grid;
@@ -16,17 +13,14 @@
   div {
     width: 100%;
     height: 100%;
-    width: var(--block-s-w);
-    height: var(--block-s-h);
     overflow: hidden;
     border-radius: 20px;
     object-position: center;
+    aspect-ratio: 2/1.4;
   }
   .div0 {
     grid-column: 1 / 2;
-    grid-row: 1 / 3;
-    width: var(--block-m-w);
-    height: var(--block-m-h);
+    grid-row: 1 / 3; 
   }
   .div1 {
     grid-column: 2 / 3;
@@ -43,8 +37,6 @@
   .div4 {
     grid-column: 2 / 4;
     grid-row: 2 / 4;
-    width: var(--block-l-w);
-    height: var(--block-l-h);
   }
   .div5 {
     grid-column: 1 / 2;
@@ -57,8 +49,6 @@
   .div7 {
     grid-column: 3 / 4;
     grid-row: 4 / 6;
-    width: var(--block-m-w);
-    height: var(--block-m-h);
   }
   .div8 {
     grid-column: 3 / 4;
@@ -67,8 +57,6 @@
   .div9 {
     grid-column: 1 / 3;
     grid-row: 5 / 7;
-    width: var(--block-l-w);
-    height: var(--block-l-h);
   }
   .div10 {
     grid-column: 3 / 4;
@@ -81,8 +69,6 @@
   .div12 {
     grid-column: 1 / 2;
     grid-row: 7 / 9;
-    width: var(--block-m-w);
-    height: var(--block-m-h);
   }
   .div13 {
     grid-column: 1 / 2;
@@ -91,8 +77,6 @@
   .div14 {
     grid-column: 2 / 4;
     grid-row: 8 / 10;
-    width: var(--block-l-w);
-    height: var(--block-l-h);
   }
   .div15 {
     grid-column: 1 / 2;
@@ -105,8 +89,6 @@
   .div17 {
     grid-column: 3 / 4;
     grid-row: 10 / 12;
-    width: var(--block-m-w);
-    height: var(--block-m-h);
   }
   .div18 {
     grid-column: 3 / 4;
@@ -115,7 +97,5 @@
   .div19 {
     grid-column: 1 / 3;
     grid-row: 11 / 13;
-    width: var(--block-l-w);
-    height: var(--block-l-h);
   }
 }

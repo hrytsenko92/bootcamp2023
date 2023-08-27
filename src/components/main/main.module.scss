@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Jost';
+  src: url('../../../fonts/Jost400Book.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,6 +13,7 @@
   &::-webkit-scrollbar {
     display: none;
   }
+  font-family: 'Electrolize', sans-serif;
 }
 body {
   background-color: #f8f8f7;
@@ -23,8 +31,8 @@ body {
     top: 0;
     height: 100vh;
     display: grid;
-    grid-template-columns: 1fr 3fr 0.1fr;
-    grid-template-rows: 0.7fr 1fr 2fr 2fr;
+    grid-template-columns: 1fr 3fr 0.3fr;
+    grid-template-rows: 0.5fr 1fr 2fr 2fr;
     .firstLine {
       grid-column: 2/3;
       grid-row: 1/2;
@@ -34,56 +42,55 @@ body {
       justify-content: space-between;
       align-items: center;
       .macPawLogo {
-        width: 104px;
-        height: 24px;
+        aspect-ratio: 5/1;
       }
-      .themeSwitcher {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: center;
-        align-items: center;
-        gap: 5px;
-        .logo {
-          width: 24px;
-          height: 24px;
-        }
-        input[type='checkbox'] {
-          height: 0;
-          width: 0;
-          visibility: hidden;
-        }
-        label {
-          cursor: pointer;
-          text-indent: -9999px;
-          width: 44px;
-          height: 24px;
-          background: #fbe0dc;
-          display: block;
-          border-radius: 100px;
-          position: relative;
-        }
-        label:after {
-          content: '';
-          position: absolute;
-          top: 4px;
-          left: 4px;
-          width: 16px;
-          height: 16px;
-          background: #ff868e;
-          border-radius: 30px;
-          transition: 0.3s;
-        }
-        input:checked + label {
-          background: #fbe0dc;
-        }
-        input:checked + label:after {
-          left: calc(100% - 5px);
-          transform: translateX(-100%);
-        }
-        label:active:after {
-          width: 20px;
-        }
-      }
+      // .themeSwitcher {
+      //   display: flex;
+      //   flex-flow: row nowrap;
+      //   justify-content: center;
+      //   align-items: center;
+      //   gap: 5px;
+      //   .logo {
+      //     width: 24px;
+      //     height: 24px;
+      //   }
+      //   input[type='checkbox'] {
+      //     height: 0;
+      //     width: 0;
+      //     visibility: hidden;
+      //   }
+      //   label {
+      //     cursor: pointer;
+      //     text-indent: -9999px;
+      //     width: 44px;
+      //     height: 24px;
+      //     background: #fbe0dc;
+      //     display: block;
+      //     border-radius: 100px;
+      //     position: relative;
+      //   }
+      //   label:after {
+      //     content: '';
+      //     position: absolute;
+      //     top: 4px;
+      //     left: 4px;
+      //     width: 16px;
+      //     height: 16px;
+      //     background: #ff868e;
+      //     border-radius: 30px;
+      //     transition: 0.3s;
+      //   }
+      //   input:checked + label {
+      //     background: #fbe0dc;
+      //   }
+      //   input:checked + label:after {
+      //     left: calc(100% - 5px);
+      //     transform: translateX(-100%);
+      //   }
+      //   label:active:after {
+      //     width: 20px;
+      //   }
+      // }
     }
     .secondLine {
       grid-column: 2/3;
@@ -94,14 +101,14 @@ body {
       align-items: flex-start;
       .greetings {
         color: #1d1d1d;
-        font-size: 44px;
+        font-size: 3rem;
         font-style: normal;
         font-weight: 500;
         line-height: 58px;
       }
       .welcome {
         color: #8c8c8c;
-        font-size: 20px;
+        font-size: 1.2rem;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
@@ -139,8 +146,7 @@ body {
             height: auto;
           }
           .link {
-            width: 138px;
-            height: 36px;
+            aspect-ratio: 4/1;
             border-radius: 10px;
             background-color: white;
             display: flex;
@@ -148,7 +154,7 @@ body {
             align-items: center;
             color: #ff868e;
             text-align: center;
-            font-size: 12px;
+            font-size: 0.8rem;
             font-style: normal;
             font-weight: 500;
             line-height: 16px;

@@ -11,7 +11,7 @@ export const GridTemplate: FC<propType> = ({ gridItem }) => {
   return (
     <>
       {Array.isArray(gridItem) ? (
-        <section className={style.container}>
+        <section className={style.gridContainer}>
           {gridItem.map((item, index) => (
             <div className={style[`div${index}`]} key={item.id}>
               <TemplateItem item={item} />
@@ -19,7 +19,7 @@ export const GridTemplate: FC<propType> = ({ gridItem }) => {
           ))}
         </section>
       ) : (
-        <section className={style.container}>
+        <section className={style.gridContainer}>
           <div className={style[`div0`]} key={0}>
             <TemplateItem item={gridItem} />
           </div>

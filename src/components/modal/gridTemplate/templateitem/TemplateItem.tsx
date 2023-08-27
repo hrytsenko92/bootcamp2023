@@ -15,7 +15,7 @@ export const TemplateItem: FC<propType> = ({ item }) => {
         <Link
           to={`/breeds/${item?.id}`}
           className={style.link}
-          state={{ from: 'breedID', item }} // data for itemID component
+          state={{ from: 'breedID', item }}
         >
           {item?.name}
         </Link>

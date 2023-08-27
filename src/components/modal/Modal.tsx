@@ -4,21 +4,22 @@ import { useLocation } from 'react-router-dom';
 import { Breeds } from './breeds/Breeds';
 import { Voting } from './voting/Voting';
 import { Gallery } from './gallery/Gallery';
-import { Likes } from './likes/Likes';
-import { Dislikes } from './dislikes/Dislikes';
-import { Favourites } from './favourites/Favourites';
-import { Search } from './search/Search';
+import { Likes } from './navBar/likes/Likes';
+import { Dislikes } from './navBar/dislikes/Dislikes';
+import { Favourites } from './navBar/favourites/Favourites';
+import { Search } from './navBar/search/Search';
 import { NavBar } from './navBar/NavBar';
 import { BreedID } from './breeds/breedID/BreedID';
+import { Loader } from './loader/Loader';
 
 export const Modal: React.FC = () => {
   const location = useLocation();
   const { from } = location.state;
 
-  const [url, setUrl] = useState()
-  useEffect(()=>{
-    setUrl(from)
-  },[from])
+  const [url, setUrl] = useState();
+  useEffect(() => {
+    setUrl(from);
+  }, [from]);
   return (
     <div className={styles.container}>
       <NavBar />
@@ -38,7 +39,7 @@ export const Modal: React.FC = () => {
         <Favourites />
       ) : from === 'breedID' ? (
         <BreedID />
-      ) : null}
+      ) : <Loader />}
     </div>
   );
 };

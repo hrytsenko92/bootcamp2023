@@ -19,7 +19,7 @@ export const BreedID: FC = () => {
     if (item) {
       const res: VotingType[] = await getData(
         `images/search?breed_ids=${item.id}`,
-        5,
+        {limit: 5},
       );
       setDataIMG(res);
     }

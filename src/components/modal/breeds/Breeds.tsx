@@ -3,8 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import style from './breeds.module.scss';
 import { Loader } from '../loader/Loader';
 import { getData } from '../../../dataLoaders';
-import { BreedType } from './breedType';
-import { allBreeds, limit } from './breedsCategory';
+import { BreedType, allBreeds, limit } from './breedType';
 import { GridTemplate } from '../gridTemplate/GridTemplate';
 
 export const Breeds: FC = () => {
@@ -26,7 +25,13 @@ export const Breeds: FC = () => {
   };
   const getBreeds = async (selectedBreed: string, selectedLimit: number) => {
     let res: BreedType[]
-    selectedBreed === 'all'? res = await getData('breeds', selectedLimit): res = await getData(`breeds/${selectedBreed}`, selectedLimit);
+    selectedBreed === 'all'
+      ? (res = await getData('breeds', {
+          limit: selectedLimit,
+        }))
+      : (res = await getData(`breeds/${selectedBreed}`, {
+          limit: selectedLimit,
+        }));
     setGridItem(res);
   };
   const sortBreeds = (i: boolean) => {

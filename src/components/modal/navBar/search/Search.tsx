@@ -14,7 +14,9 @@ export const Search: FC = () => {
   const findBreed = async (name: string) => {
     if (allBreeds.find(breed => breed.name === name)) {
       const temp = allBreeds.find(breed => breed.name === name);
-      const res: BreedType[] = await getData(`breeds/${temp?.id}`, 1);
+      const res: BreedType[] = await getData(`breeds/${temp?.id}`, {
+        limit: 1,
+      });
       setData(res);
     }
   };
